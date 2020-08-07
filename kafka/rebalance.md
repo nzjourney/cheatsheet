@@ -2,12 +2,13 @@
 
 - Create reassign json file:
 ```json
-{"version":1,
- "partitions":[
-    {"topic":"topic-name","partition":0,"replicas":[1,0,2]},
-    {"topic":"topic-name","partition":1,"replicas":[0,2,1]},
-    {"topic":"topic-name","partition":2,"replicas":[2,1,0]}
-  ]
+{ "version": 1,
+    "partitions":
+    [
+       { "topic":"topic-name","partition":0,"replicas":[1,0,2] },
+       { "topic":"topic-name","partition":1,"replicas":[0,2,1] },
+       { "topic":"topic-name","partition":2,"replicas":[2,1,0] }
+    ]
 }
 ```
 
