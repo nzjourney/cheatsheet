@@ -18,6 +18,7 @@ $ helm repo update
 - How to install package:
 ```sh
 $ helm install repo-name/package-name --generate-name
+$ helm install released-name repo-name/package-name --namespace namespace-name
 ```
 
 - How to see what has released using Helm:
