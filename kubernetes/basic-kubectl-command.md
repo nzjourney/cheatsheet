@@ -50,6 +50,12 @@ $ kubectl get services
 $ kubectl get deployment
 ```
 
+- How to get daemonset:
+```sh
+$ kubectl get daemonset
+$ kubectl get daemonset -n namespace
+```
+
 - How to get describe a pod:
 ```sh
 $ kubectl describe pod pod-name
