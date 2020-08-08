@@ -24,6 +24,7 @@ $ helm install released-name repo-name/package-name --namespace namespace-name
 - How to see what has released using Helm:
 ```sh
 $ helm ls
+$ helm ls -n namespace-name
 ```
 
 - How to uninstall package:
