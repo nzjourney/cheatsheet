@@ -50,6 +50,11 @@ $ kubectl get services
 $ kubectl get deployment
 ```
 
+- How to delete deployment:
+```sh
+$ kubectl delete deployment deployment-name
+```
+
 - How to get daemonset:
 ```sh
 $ kubectl get daemonset
