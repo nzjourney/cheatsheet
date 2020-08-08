@@ -24,6 +24,7 @@ $ kubectl create -f file.yml
 ```sh
 $ kubectl get po
 $ kubectl get pods
+$ kubectl get pods -n namespace
 ```
 
 - How to get nodes:
