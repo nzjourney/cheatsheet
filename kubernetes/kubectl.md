@@ -93,6 +93,11 @@ $ kubectl top node node-name
 $ kubectl exec pod-name some-command
 ```
 
+- How to remote container inside pod:
+```sh
+$ kubectl exec -it pod-name /bin/sh
+```
+
 - How to create port forwarding:
 ```sh
 $ kubectl port-forward pod-name local-port:remote-port
