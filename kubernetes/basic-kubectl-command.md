@@ -20,6 +20,12 @@ $ kubectl apply -f file.yml
 $ kubectl create -f file.yml
 ```
 
+- How to get all information:
+```sh
+$ kubectl get all
+$ kubectl get all -n namespace-name
+```
+
 - How to get pods:
 ```sh
 $ kubectl get po
