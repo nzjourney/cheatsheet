@@ -57,6 +57,16 @@ $ kubectl get ep
 $ kubectl get endpoints
 ```
 
+- How to get resources:
+```sh
+$ kubectl get rs
+```
+
+- How to get custom resources:
+```sh
+$ kubectl get crd
+```
+
 - How to get cluster issuer:
 ```sh
 $ kubectl get clusterissuer
