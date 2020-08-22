@@ -51,6 +51,12 @@ $ kubectl get svc
 $ kubectl get services
 ```
 
+- How to get endpoints:
+```sh
+$ kubectl get ep
+$ kubectl get endpoints
+```
+
 - How to get cluster issuer:
 ```sh
 $ kubectl get clusterissuer
