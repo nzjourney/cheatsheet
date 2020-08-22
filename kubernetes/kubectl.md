@@ -51,6 +51,11 @@ $ kubectl get svc
 $ kubectl get services
 ```
 
+- How to get cluster issuer:
+```sh
+$ kubectl get clusterissuer
+```
+
 - How to get deployment:
 ```sh
 $ kubectl get deployment
@@ -80,7 +85,7 @@ $ kubectl config get-cluster cluster-name
 
 - How to get logs from a pod:
 ```sh
-$ kubectl get logs pod-name
+$ kubectl logs pod-name
 ```
 
 - How to display resources usage of node:
