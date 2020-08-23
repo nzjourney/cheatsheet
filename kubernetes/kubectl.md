@@ -45,6 +45,12 @@ $ kubectl get ing
 $ kubectl get ingress
 ```
 
+- How to get jobs:
+```sh
+$ kubectl get job
+$ kubectl get jobs
+```
+
 - How to get namespace:
 ```sh
 $ kubectl get ns
