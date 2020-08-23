@@ -39,6 +39,12 @@ $ kubectl get no
 $ kubectl get nodes
 ```
 
+- How to get ingress:
+```sh
+$ kubectl get ing
+$ kubectl get ingress
+```
+
 - How to get namespace:
 ```sh
 $ kubectl get ns
