@@ -2,7 +2,7 @@
 
 - How to see cluster information:
 ```sh
-$ kubectl cluster-info 
+$ kubectl cluster-info
 ```
 
 - How to see API version:
