@@ -32,7 +32,40 @@ rules:
 " | kubectl apply -f -
 ```
 
-5. Install fluentd on daemonset and change value elasticsearch-logging to elasticsearch host
+5. Install dummy random-generator backend server for testing purpose
+```
+$ echo "
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: random-generator
+---
+# The Deployment which will run our log generator
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: random-generator
+  namespace: random-generator
+  labels:
+    app: random-generator
+spec:
+  selector:
+    matchLabels:
+      app: random-generator
+  template:
+    metadata:
+      labels:
+        app: random-generator
+    spec:
+      containers:
+      - name: random-generator
+        imagePullPolicy: Always
+        # You can build the image off the source code and push to your own docker hub if you prefer.
+        image: chriscmsoft/random-generator:latest
+" | kubectl apply -f -
+```
+
+6. Install fluentd on daemonset and change value elasticsearch-logging to elasticsearch host
 ```
 $ echo "
 apiVersion: apps/v1
@@ -112,10 +145,12 @@ spec:
 " | kubectl apply -f -
 ```
 
-3. Wait until daemonset deployed
+7. Wait until daemonset deployed
 ```
 $ kubectl rollout status daemonset/fluentd -n kube-logging
 ```
+
+8. Open kibana and set the index pattern
 
 References:
 https://docs.fluentd.org/container-deployment/kubernetes
