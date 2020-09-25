@@ -31,3 +31,8 @@ subsets:
         name: "mysql"
 " | kubectl apply -f -
 ```
+
+3. Check the kubernetes service with command:
+```
+$ kubectl get svc
+```
