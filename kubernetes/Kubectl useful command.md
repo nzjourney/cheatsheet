@@ -113,6 +113,12 @@ $ kubectl get pvc
 $ kubectl get pvc -n namespace
 ```
 
+- How to get configmap:
+```sh
+$ kubectl get configmap
+$ kubectl get configmap -n namespace
+```
+
 - How to get describe a pod:
 ```sh
 $ kubectl describe pod pod-name
