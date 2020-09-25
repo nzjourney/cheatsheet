@@ -10,7 +10,39 @@ $ kubectl create ns kube-logging
 $ kubectl create serviceaccount fluentd -n kube-logging
 ```
 
-4. Create clusterrole for fluentd
+4. Create kube service for access Elasticsearch outside cluster, and change ip value below to you ip Elasticsearch:
+```
+$ echo "
+kind: "Service"
+apiVersion: "v1"
+metadata:
+  name: "elasticsearch"
+spec:
+  ports:
+    -
+      name: "elasticsearch"
+      protocol: "TCP"
+      port: 9200
+      targetPort: 9200
+      nodePort: 0
+---
+kind: "Endpoints"
+apiVersion: "v1"
+metadata:
+  name: "elasticsearch"
+subsets:
+  -
+    addresses:
+      -
+        ip: "elasticsearch-logging"
+    ports:
+      -
+        port: 9200
+        name: "elasticsearch"
+" | kubectl apply -f -
+```
+
+5. Create clusterrole for fluentd
 ```
 $ echo "
 apiVersion: rbac.authorization.k8s.io/v1
@@ -32,7 +64,7 @@ rules:
 " | kubectl apply -f -
 ```
 
-5. Install dummy random-generator backend server for testing purpose
+6. Install dummy random-generator backend server for testing purpose
 ```
 $ echo "
 kind: Namespace
@@ -65,7 +97,7 @@ spec:
 " | kubectl apply -f -
 ```
 
-6. Install fluentd on daemonset and change value elasticsearch-logging to elasticsearch host
+7. Install fluentd on daemonset and change value elasticsearch-logging to elasticsearch host
 ```
 $ echo "
 apiVersion: apps/v1
@@ -145,12 +177,12 @@ spec:
 " | kubectl apply -f -
 ```
 
-7. Wait until daemonset deployed
+8. Wait until daemonset deployed
 ```
 $ kubectl rollout status daemonset/fluentd -n kube-logging
 ```
 
-8. Open kibana and set the index pattern
+9. Open kibana and set the index pattern
 
 References:
 https://docs.fluentd.org/container-deployment/kubernetes
