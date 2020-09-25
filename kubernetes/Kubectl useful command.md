@@ -107,6 +107,12 @@ $ kubectl get persistentvolume
 $ kubectl get persistentvolume -n namespace
 ```
 
+- How to get persistent volume claim:
+```sh
+$ kubectl get pvc
+$ kubectl get pvc -n namespace
+```
+
 - How to get describe a pod:
 ```sh
 $ kubectl describe pod pod-name
