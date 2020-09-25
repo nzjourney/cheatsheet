@@ -100,6 +100,13 @@ $ kubectl get daemonset
 $ kubectl get daemonset -n namespace
 ```
 
+- How to get persistent volume:
+```sh
+$ kubectl get pv
+$ kubectl get persistentvolume
+$ kubectl get persistentvolume -n namespace
+```
+
 - How to get describe a pod:
 ```sh
 $ kubectl describe pod pod-name
